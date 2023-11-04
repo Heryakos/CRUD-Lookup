@@ -1,0 +1,15 @@
+
+::ng-deep .custom-success-style{
+    background-color:green;
+    color:white;
+    text-align: center;
+    border: 2px solid white;
+    border-style: inset;
+  }
+  ::ng-deep .custom-error-style{
+    background-color:red;
+    color:white;
+    text-align: center;
+    border: 2px solid white;
+    border-style: inset;
+  }

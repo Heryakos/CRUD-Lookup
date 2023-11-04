@@ -1,0 +1,218 @@
+.example-container {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+  }
+
+  .col-md-9 {
+    width: 65%;
+  }
+
+  .col-md-3 {
+  width: 35%;
+  }
+
+  mat-sidenav{
+    border:1px solid white;
+    background-color: steelblue;
+    align-content: center;
+    margin: 8px;
+    /* width: 333px; */
+    border-right: none;
+    /* background: #002b5c; */
+    color: white;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+
+  }
+  p-dialog{
+    font-weight: bold;
+  }
+  mat-sidenav-content {
+    height: calc(100vh);
+ background-color: ghostwhite;  
+ margin: 20;
+ font-style: normal;
+
+  }
+  .isNotActiveLink{
+      color:white;
+      background-color:steelblue;
+      width: 100%;
+  }
+  .isNotActiveLink:hover{
+   background-color: thistle;
+   color:blue;
+  }
+  .butn{
+    background-color: steelblue;
+    color: white;
+    font-weight: bold;
+    border-color: steelblue;
+  border: 0ch;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+  }
+  .butn:hover{
+    background-color: rgb(126, 178, 221);
+    color: white;
+    font-weight: bold;
+    border-color: rgb(126, 178, 221);
+  border: 0ch;
+    height: 30px;
+  }
+  .butn:focus{
+    background-color: rgb(126, 178, 221);
+    color: white;
+    font-weight: bold;
+    border-color: rgb(126, 178, 221);
+  border: 0ch;
+    height: 30px;
+  }
+  .ActiveLink{
+    color:green;
+    background-color:white;
+    width: 100%;
+}
+mat-nvalist button{
+    margin: 0;
+}
+
+.content {
+  /* background-color:aliceblue; */
+  height: calc(100vh - 98px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  display: right;
+  justify-content: right;
+  align-items: bottom;
+  margin-left: 400;
+  padding-left: 400;
+
+  font-size: 20;
+  color: #000000d3;
+}
+button{
+  size: 30;
+}
+.background{
+  background: beige;
+  background-color: azure;
+}
+
+
+
+
+table {
+  width: 100%;
+ }
+ table th{
+  color: steelblue;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1.2em;
+  background-color:rgb(233, 239, 241);
+  border:1px solid black;
+  padding: 10px;
+}
+ mat-paginator{
+     font-size: 1em;
+ }
+ .setTitle{
+     background-color: lightgray;
+     color:steelblue;
+     text-align: center;
+ }
+ .layoutCard {
+     width: 50%;
+     position: relative;
+     left: 10%;
+ 
+ }
+ .layoutCard mat-form-field{
+     width: 100%;
+ }
+ .styleFooter{
+     float: right;
+ }
+ div mat-card form input[type='text']{
+     width: 100%;
+     
+ }
+ 
+::ng-deep .custom-success-style{
+  background-color:green;
+  color:white;
+  text-align: center;
+  border: 2px solid white;
+  border-style: inset;
+}
+::ng-deep .custom-error-style{
+  background-color:red;
+  color:white;
+  text-align: center;
+  border: 2px solid white;
+  border-style: inset;
+}
+table td{
+    color:black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-radius: 3px 4px;
+    font-size: 1.2em;
+    text-align: center;
+}
+td {
+  overflow: visible !important;
+}
+
+table {
+  overflow-x: visible !important;
+}
+.responsive-table {
+  width: 100% !important;
+  overflow-x: scroll;
+  overflow-y: visible;
+  min-height: 50vh;
+}
+.ui-state-highlight {
+  background: green !important;
+  color: white;
+}
+th {
+  width: 150px;
+}
+:host ::ng-deep .ui-dialog .ui-dialog-titlebar {
+  background-color:green;
+  color: white;
+  font-weight: bolder;
+  size: 100px;
+  align-self: center;
+}
+.ui-dialog-titlebar-close span {
+  display:none!important;
+}
+@media (max-width: 767px) {
+  .example-container {
+  }
+}
+
+/* @media (min-width: 992px){
+.col-md-9 {
+    width: 65%;
+}
+}
+
+@media (min-width: 992px){
+.col-md-3 {
+    width: 35%;
+}
+} */
+

@@ -1,0 +1,146 @@
+<div class="container-fluid">
+<div class="row">
+  <div class="col-4 col-md-3">
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened>
+        <h4 style="color:white;text-align: center;"> Lookup Tables</h4>
+        <mat-nav-list *ngFor="let lkm of lkmasterss">
+          <div class="container">
+            <button class="butn" type="button" [value]="lkm.lkmaster_code"
+            (mousedown)="passdata($event); getlkmasterComponent()">
+            {{ lkm.description }}
+           </button>
+          </div>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  </div>
+  <div class="col-8 col-md-9">
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav-content>
+        <h4 style="background-color: steelblue;color: white;font-weight: bold; text-align: center;">
+          {{ title }} Lookup
+        </h4>
+        <p-table
+          [value]="lkde"
+          [resizableColumns]="true"
+          [styleClass]="'fixed-sized-table'"
+          [paginator]="true"
+          [rows]="5"
+          responsiveLayout="scroll"
+          currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+          [selectionMode]="'single'"
+          [(selection)]="selectedRow"
+          #General_table
+        >
+    
+        <ng-template pTemplate="header">
+            <tr>
+                <th pResizableColumn scope="col" translate>English Description</th>
+                <th pResizableColumn scope="col" translate>Is Active</th>
+                <th scope="col">
+                    <button pButton pRipple type="button" (click)="Addnew()" translate>
+                        Add New
+                    </button>
+                </th>
+            </tr>
+        </ng-template>
+    
+        <ng-template pTemplate="body" let-rowData let-lkde>
+            <tr [pSelectableRow]="rowData">
+                <td pResizableColumn scope="col">{{lkde.english_description}}</td>
+                <td pResizableColumn scope="col">{{lkde.isActive}}</td>
+                <td>
+                    <button type="button" class="btn btn-primary edit-button"  (click)="edit(lkde);">
+                      <!-- <i class="pi pi-pencil"></i> -->
+                      Edit
+                  </button>
+                </td>
+            </tr>
+        </ng-template>
+    
+    </p-table>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>
+</div>
+
+<p-dialog [(visible)]="display" [closable]="false" >
+  <H4 style="background-color: steelblue;color: white;font-weight: bold; text-align: center;">
+    <p-header>{{title}} Lookup</p-header>
+  </H4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label for="CV" class="col-sm-4 col-form-label col-form-label-sm" translate>LKdetail Code</label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.lkdetail_code" class="form-control" name="lkdetail_code"
+            placeholder="lkdetail_code" id="lkdetail_code" required readonly />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="disciplinary_Records" class="col-sm-4 col-form-label col-form-label-sm" translate>Lkmaster Master
+          Code</label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="SideNavService.lkmaster_master_code" class="form-control"
+            name="lkmaster_master_code" placeholder="lkmaster_master_code ID" required readonly />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="education" class="col-sm-4 col-form-label col-form-label-sm" translate>English Description</label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.english_description" class="form-control" name="english_description"
+            placeholder="english_description " id="english_description" required />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="family_Info" class="col-sm-4 col-form-label col-form-label-sm" translate>Amharic Description</label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.amharic_description" class="form-control" name="amharic_description"
+            placeholder="amharic_description" id="amharic_description" required />
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label for="pension" class="col-sm-4 col-form-label col-form-label-sm" translate>Tigrigna Description
+        </label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.tigrigna_description" class="form-control"
+            name="tigrigna_description" placeholder="tigrigna_description" id="tigrigna_description" required />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="promotion" class="col-sm-4 col-form-label col-form-label-sm" translate>Oromiffa Description</label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.oromiffa_description" class="form-control"
+            name="oromiffa_description" placeholder="oromiffa_description" id="oromiffa_description" required />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="skill" class="col-sm-4 col-form-label col-form-label-sm" translate>Is Active</label>
+        <div class="col-sm-8">
+          <input type="checkbox" [(ngModel)]="lkmaster.isActive" class="form-control" name="IsActive"
+            placeholder="IsActive" id="IsActive" required />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="termination" class="col-sm-4 col-form-label col-form-label-sm" translate>Parent
+        </label>
+        <div class="col-sm-8">
+          <input type="text" [(ngModel)]="lkmaster.parent" class="form-control" name="Parent" placeholder="Parent"
+            id="Parent" required readonly />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p-footer>
+    <button pButton pRipple type="button" (click)="Save()" label="Save" class="p-button-save"></button>
+  </p-footer>
+  <p-footer>
+    <button pButton pRipple type="button" (click)="display=false" label="Close" class="p-button-danger"></button>
+  </p-footer>
+</p-dialog>
